@@ -1,0 +1,163 @@
+ <div class="main" ng-controller="mainController" ng-show="state === 'main'">
+     <p style="padding: 20px"></p>
+      <div class="row">
+        <div class="col-xl-8 col-xl-offset-2">
+            <button class="btn btn-outline-primary" ng-click="createGroup()">Create Group</button> 
+            <button class="btn btn-outline-success" ng-click="joinGroup()">Join Random</button>
+        </div>
+      </div>
+</div>
+
+<div class="group" ng-controller="groupController" ng-show="state === 'group'">
+    <p style="padding: 20px"></p>
+    <div class="row">
+        <div class="col-xl-8 col-xl-offset-2">
+            <h2>{{message}}</h2>
+            <p style="padding: 10px"></p>
+            <button class="btn btn-outline-primary" ng-click="inviteBox = true" ng-show="invite">Invite Friends</button>
+            <button class="btn btn-outline-primary" ng-click="startGame()">Start Game</button>  
+        </div>
+      </div>
+    <p style="padding: 10px"></p>
+    <div class="row">
+        <div class="col-xl-10 col-xl-offset-1">
+            <ul class="player-list">
+                <li ng-repeat="player in players">{{player.id}}</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="logModal animate-show-hide" ng-show="inviteBox">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-12">
+                      <div class="logmodal-body">
+                          <div class="logmod-head">
+                              <p class="logactive">Send Invitation</p><i class="fa fa-close" ng-click="inviteBox = false; notify = ''"></i>
+                          </div>
+                          <div class="logmodal-content">
+                              <form ng-submit="sendInvite()" method="post">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control textbox" name="playerid" ng-model="user.id" placeholder="Player Id">
+                                    </div> 
+                                  <p style="padding: 10px"></p>
+                                    <div class="input-group">
+                                        <input class="btn btn-outline-primary btnblck" type="submit" value="Send">
+                                    </div>
+                              </form>
+                              
+                              <div>
+                                <p style="color: black">{{notify}}</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="table" ng-controller="tableController" ng-show="state === 'table'">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9">
+                <div class="tableborder">
+                    <img src="img/circ.png">
+                    <img src="img/circ.png">
+                    <img src="img/circ.png">
+                    <img src="img/circ.png">
+                    
+                    <div class="playtable">
+                        
+                        <div class="player player-1">
+                            <div class="row">
+                                <div class="cardselect">
+                                    <div ng-repeat="cards in cardsToPlay" class="selected animate-show-hide" ng-show="turn" ng-click="turnPlayed($index)">
+                                        <ul>
+                                            <li ng-repeat="card in cards" class="card">
+                                                <p style="text-align: left; left: 0px; top: 0px">{{card.digit}}</p>
+                                                <div style="background: url('{{card.img}}'); background-size: 100% 100%; width: 90%; height: 90%; margin: 5%"></div>
+                                                <p style="text-align: right; bottom: 0px; right: 0px">{{card.digit}}</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="show">
+                                        <button class="btn btn-show" ng-click="showCall()" ng-show="show">Call Show</button>
+                                    </div>
+                                    <div class="deck">
+                                        <ul class="cards">
+                                            <li ng-repeat="card in current_player.cards" class="card" ng-click="selectCard(card.value, $index)">
+                                                <p style="text-align: left; left: 0px; top: 0px">{{card.digit}}</p>
+                                                <div style="background: url('{{card.img}}'); background-size: 100% 100%; width: 90%; height: 90%; margin: 5%"></div>
+                                                <p style="text-align: right; bottom: 0px; right: 0px">{{card.digit}}</p>
+                                            </li>
+                                        </ul>
+                                        <p class="name name-1">{{current_player.id}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="player player-2">
+                            <div class="deck deck-2">
+                                <ul class="cards-2">
+                                    <li ng-repeat="card in cards(tot_players[0].cards)" class="card-2 card-back">
+
+                                    </li>
+                                </ul>
+                                <p class="name name-2">{{tot_players[0].id}}</p>
+                            </div>
+                        </div>
+
+                        <div class="player player-3">
+                            <div class="deck">
+                                <ul class="cards">
+                                    <li ng-repeat="card in cards(tot_players[1].cards)" class="card-3 card-back">
+
+                                    </li>
+                                </ul>
+                                <p class="name name-3" ng-show="tot_players[1]">{{tot_players[1].id}}</p>
+                            </div>
+                        </div>
+
+                        <div class="player player-4">
+                            <div class="deck deck-2">
+                                <ul class="cards-2">
+                                    <li ng-repeat="card in cards(tot_players[2].cards)" class="card-2 card-back">
+
+                                    </li>
+                                </ul>
+                                <p class="name name-4" ng-show="tot_players[2]">{{tot_players[2].id}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                <div class="col-xl-3">
+                    <div class="board">
+                        <h2>{{message}}</h2>
+                        <br>
+                        <h3>Points</h3>
+                        <ul class="points">
+                            <li ng-repeat="point in points track by $index">{{point.id}} <span>{{point.points}}</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board" ng-show="cardsPlayedBy != ''">
+                        <h2>Turn Played by {{cardsPlayedBy}}</h2>
+                        <p style="padding: 5px"></p>
+                        <ul class="cards">
+                            <li ng-repeat="card in cardsPlayed[0]" class="card">
+                                <p style="text-align: left; left: 0px; top: 0px">{{card.digit}}</p>
+                                <div style="background: url('{{card.img}}'); background-size: 100% 100%; width: 90%; height: 90%; margin: 5%"></div>
+                                <p style="text-align: right; bottom: 0px; right: 0px">{{card.digit}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

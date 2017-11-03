@@ -1,0 +1,460 @@
+@font-face {
+    font-family: lasenter;
+    src: url('../fonts/LasEnter.ttf');
+}
+@font-face {
+    font-family: reno;
+    src: url('../fonts/budmo-jigglish.ttf');
+}
+
+body {
+    background: url('../img/cards-back.jpg');
+    background-size: 100% 100%;
+}
+.main {
+    position: relative;
+    text-align: left;
+}
+.btn {
+    cursor: pointer;
+}
+.wlcm {
+    color: white;
+    padding: 10px 0;
+}
+.container {
+    max-width: 96%;
+}
+.navbar-brand {
+    font-family: reno;
+    font-size: 55px;
+    text-align: left;
+    color: #44C7F5;
+    font-weight: bolder;
+    padding-bottom: 0;
+    transition: .3s ease all;
+}
+.navbar-brand:hover {
+    color: #44C7F5;
+    text-shadow: 0px 0px 4px rgba(23,160,35,0.6);
+}
+.navbar-text {
+    font-family: lasenter;
+    font-size: 40px;
+    text-align: left;
+    color: white;
+    padding-top: 0;
+    padding-bottom: 20px;
+    font-weight: bolder;
+    text-shadow: 2px 1px 8px rgba(19,132,255,0.9);
+}
+.btn-badge {
+    position: relative;
+    display: inline-block;
+}
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+.invites {
+    padding-left: 0;
+    padding-top: 20px;
+}
+.invites li {
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+.btn-invite {
+    padding: 0 5px;
+    font-weight: 600;
+    color: rgb(100,100,100);
+    border: 0;
+    background: none;
+    transition: .5s ease all;
+}
+.btn-accept:hover {
+    color: #28a745;
+}
+.btn-decline:hover {
+    color: #dc3545;
+}
+
+.group h2 {
+    color: white;
+}
+.cardselect {
+    display: table;
+    margin: 0 auto;
+}
+.player-list {
+    padding: 0;
+    list-style-type: none;
+}
+.player-list li {
+    background: rgba(212,238,240, 0.6);
+    color: black;
+    border-left: 4px solid #2F828A;
+    padding: 15px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.table {
+    margin-top: -50px;
+}
+.table h2 {
+    padding-left: 10px;
+    font-size: 23px;
+    color: #C8C8C8;
+}
+.table h3 {
+    color: #138E4B;
+}
+.name {
+    text-align: center;
+    position: absolute;
+    margin-bottom: 0;
+    padding: 1px 8px 4px;
+    background: black;
+    color: rgb(255,215,0);
+    font-weight: bold;
+    text-shadow: 0px 0px 6px rgba(255,215,0,0.7);
+}
+.name-1 {
+    bottom: -17%;
+    left: 43%;
+}
+.name-2 {
+    top: 45%;
+    left: 37%;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    height: 30px;
+}
+.name-3 {
+    top: 2%;
+    left: 43%;
+}
+.name-4 {
+    top: 45%;
+    right: 37%;
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    height: 30px;
+}
+.show {
+    text-align: center;
+    padding: 10px;
+}
+.btn-show {
+    background: black;
+    border: 1px solid black;
+    color: white;
+    transition: .5s ease all;
+}
+.btn-show:hover {
+    border: 1px solid white;
+    background: white;
+    color: black;
+}
+.tableborder {
+    width: 100%;
+    height: 500px;
+    background: url('../img/IMG_512204.jpg');
+    background-size: 100% 100%;
+    border-radius: 45%;
+    padding: 5%;
+    position: relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.tableborder > img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+}
+.tableborder > img:nth-child(1) {
+    top: 0.5%;
+    left: 49.5%;
+}
+.tableborder > img:nth-child(2) {
+    top: 45%;
+    right: 0.25%;
+}
+.tableborder > img:nth-child(3) {
+    top: 45%;
+    left: 0.25%;
+}
+.tableborder > img:nth-child(4) {
+    top: 91.5%;
+    left: 49.5%;
+}
+.playtable {
+    background: url('../img/table.jpg');
+    background-size: 100% 100%;
+    border-radius: 45%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    -moz-box-shadow:    inset 0 0 5px #000000;
+   -webkit-box-shadow: inset 0 0 5px #000000;
+   box-shadow:         inset 0 0 5px #000000;
+    position: relative;
+}
+.player {
+    position: absolute;
+    padding: 20px 40px;
+}
+.player-1 {
+    bottom: 5px;
+    width: 100%;
+}
+.player-2 {
+    left: 5px;
+    height: 100%;
+    display: table;
+}
+.player-3 {
+    top: 5px;
+    width: 100%;
+    padding: 40px 0 0;
+}
+.player-4 {
+    right: 5px;
+    height: 100%;
+    display: table;
+}
+.deck {
+    display: table;
+    margin: auto;
+}
+.deck-2 {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cards {
+    list-style-type: none;
+    padding: 0px;
+}
+.cards-2 {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 40px;
+}
+.card {
+    height: 60px;
+    width: 50px;
+    border: 1px solid black;
+    margin-right: 3px;
+    display: inline-block;
+    position: relative;
+}
+.card-back {
+    background: url('../img/card-back.png');
+    background-size: 100% 100%;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.card-2 {
+    height: 60px;
+    width: 50px;
+    margin-top: -40px;
+}
+
+.card-3 {
+    height: 60px;
+    width: 50px;
+    margin-right: 3px;
+    display: inline-block;
+    position: relative;
+}
+
+.card img {
+    position: absolute;
+    top: 18px;
+    left: 14px;
+}
+.card p {
+    position: absolute;
+    padding: 2px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+}
+
+/*Animation*/
+
+
+.cards li.ng-leave {
+    transition: .5s ease all;
+    opacity: 1;
+    transform: translateX(0);
+}
+.cards li.ng-leave.ng-leave-active {
+    transition: .5s ease all;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.cards li.ng-enter {
+    transition: .5s ease all;
+    transform: translateX(100%);
+    opacity: 0;
+}
+.cards li.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cards-2 li.ng-leave {
+    transition: .5s ease all;
+    opacity: 1;
+    transform: translateY(0);
+}
+.cards-2 li.ng-leave.ng-leave-active {
+    transition: .5s ease all;
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.cards-2 li.ng-enter {
+    transition: .5s ease all;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.cards-2 li.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.selected {
+    display: inline-block;
+}
+.selected ul{
+    padding: 5px 10px;
+}
+.board {
+    border: 2px solid black;
+    width: 100%;
+    border: 4px solid black;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    background: url('../img/Scratchedscreen3.jpg');
+}
+.points {
+    padding: 10px;
+    list-style-type: none;
+    background: #2c3e50; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(44,62,80,0.5), rgba(76,161,175,0.5)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(44,62,80,0.5), rgba(76,161,175,0.5)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+}
+.points li {
+    color: white;
+    position: relative;
+    padding: 5px;
+}
+.points li span {
+    padding: 0 5px;
+    background: black;
+    position: absolute;
+    right: 15px;
+}
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+.logModal {
+    background: white;
+    width: 60%;
+    margin-left: 30%;
+    margin-top: -10%;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+.logmodal-body{
+    padding: 30px;
+    width: 100%;
+}
+.logmod-head {
+    font-weight: 600;
+    color: #D4D4D4;
+    font-size: 20px;
+    position: relative;
+}
+.logmod-head a{
+    color: #D4D4D4;
+}
+.logmod-head a {
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+}
+.logmod-head i {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+.logmod-head i:hover {
+    color: black;
+}
+.textbox {
+    border: 0;
+    background-color: white !important;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    border-radius: 0;
+    padding-left: 4px;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+.btn-block .col-6, .btn-block .col-3, .btn-block .container {
+    padding: 5px 3px;
+}
+.btn-block .col-4 {
+    padding-right: 0;
+}
+.btn-block {
+    padding: 50px 0 0;
+}
+.btn-block p {
+    margin-bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    color: #A4A4A4;
+    font-weight: 500;
+}
+.btn-block i {
+    background: #DC4A38;
+    color: white;
+    border-radius: 50%;
+}
+.fb {
+    background: #4267B2 !important;
+    margin: 0 8px;
+}
+.btnblck {
+    border: 2px solid #007bff;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: .5rem .9rem;
+}
+.logactive {
+    color: #007bff !important;
+}
